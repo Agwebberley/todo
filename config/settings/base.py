@@ -50,7 +50,7 @@ LOCALE_PATHS = [str(BASE_DIR / "locale")]
 DATABASES = {
     "default": env.db(
         "DATABASE_URL",
-        default="postgres:///todo",
+        default="postgres://postgres:postgres@127.0.0.1:5432/todo",
     ),
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
@@ -92,7 +92,8 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "todo.users",
-    "theme", # Theme App for tailwind
+    "theme",  # Theme App for tailwind
+    "todo.task",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -294,13 +295,13 @@ SOCIALACCOUNT_FORMS = {"signup": "todo.users.forms.UserSocialSignupForm"}
 
 # Your stuff...
 # ------------------------------------------------------------------------------
-AWS_REGION = 'us-west-2'
+AWS_REGION = "us-west-2"
 FRAME_VERSION = frame.__version__
 APP_VERSION = "0.1.0"
 
 # THEME
 # ------------------------------------------------------------------------------
-TAILWIND_APP_NAME = 'theme'
+TAILWIND_APP_NAME = "theme"
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
