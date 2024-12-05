@@ -297,7 +297,7 @@ SOCIALACCOUNT_FORMS = {"signup": "todo.users.forms.UserSocialSignupForm"}
 # ------------------------------------------------------------------------------
 AWS_REGION = "us-west-2"
 FRAME_VERSION = frame.__version__
-APP_VERSION = "0.1.0"
+APP_VERSION = "0.9.0"
 
 # THEME
 # ------------------------------------------------------------------------------
