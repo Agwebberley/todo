@@ -6,7 +6,7 @@ from frame.base_views import (
     BaseDeleteView,
     BaseDetailView,
 )
-from .models import Task
+from .models import Task, TaskList
 from django.urls import reverse_lazy
 # Create your views here.
 
@@ -32,3 +32,22 @@ class TaskDeleteView(BaseDeleteView):
 
 class TaskDetailView(BaseDetailView):
     model = Task
+
+
+class TaskListCreateView(BaseCreateView):
+    model = TaskList
+    success_url = reverse_lazy("tasklist-list")
+
+
+class TaskListListView(BaseListView):
+    model = TaskList
+
+
+class TaskListUpdateView(BaseUpdateView):
+    model = TaskList
+    success_url = reverse_lazy("tasklist-list")
+
+
+class TaskListDeleteView(BaseDeleteView):
+    model = TaskList
+    success_url = reverse_lazy("tasklist-list")

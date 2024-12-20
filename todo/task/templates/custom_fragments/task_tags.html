@@ -1,0 +1,18 @@
+<!-- Description: This template is used to display the task tags of a task. -->
+<!-- task_tags is a comma-separated list of tags. -->
+{% load todo_utils %}
+
+<div class="flex flex-wrap gap-2">
+    {% if obj.task_tags %}
+        {% for tag in obj.task_tags|comma_seperated_to_list %}
+            <form hx-get="." hx-target="#table-container" hx-trigger="click">
+                <input type="hidden" name="filter" value="task_tags">
+                <input type="hidden" name="search" value="{{ tag }}">
+                <input type="hidden" name="exact" value="True">
+                <button type="submit" class="px-3 py-1 underline text-sm font-medium text-white bg-blue-500 rounded-full">
+                    {{ tag }}
+                </button>
+            </form>
+        {% endfor %}
+    {% endif %}
+</div>
