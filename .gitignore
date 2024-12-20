@@ -274,3 +274,8 @@ dump.rdb
 todo/media/
 
 .pytest_cache/
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform.tfstate
+terraform/.terraform.lock.hcl
+terraform/.terraform/
